@@ -86,8 +86,13 @@ try {
                 move_uploaded_file($from, $to);
             } catch (\Throwable $th) {
                 $errors['picture'] = $th->getMessage();
+            } 
+        } else {
+                //ici on définit une image par défaut à l'utilisateur s'il n'en ajoute pas de son côté
+                $fileName = 'uploads/users/user-img.png';
+                $to = __DIR__ . '/../public/uploads/users/' . $fileName;
             }
-        }
+
         if (empty($errors)) {
             $newUser = new User();
             //nouvel instance de l'objet issu de la classe Vehicle
@@ -104,7 +109,7 @@ try {
             // Vérification si l'insertion est réussie
             if ($saved) {
                 // FlashMessage::set("Votre inscription a été un succès", SUCCESS);
-                header("location: /connexion");
+                header("location: confirmation");
                 die;
             } else {
                 $errors['insertion'] = 'Une erreur s\'est produite.';

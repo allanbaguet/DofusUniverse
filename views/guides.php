@@ -26,7 +26,7 @@
             <div class="card h-100 bg-color-body-card">
                 <h5 class="card-title p-3 text-center fs-4 title-card-white"><?=$guideList->main_title?></h5>
                 <a href="/guide?id_guides=<?=$guideList->id_guides?>">
-                    <img src="/public/assets/img/encyclopedie-img.jpg" class="card-img-top img-fluid desktop-img" alt="donjons">
+                    <img src="/public/uploads/guides/<?=$guideList->picture_guides?>" class="card-img-top img-fluid desktop-img" alt="guides">
                 </a>
                 <div class="card-body p-0">
                     <p class="card-text p-3">Tous les trucs et astuces regroupés dans ce 

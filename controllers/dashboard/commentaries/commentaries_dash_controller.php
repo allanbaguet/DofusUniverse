@@ -21,6 +21,7 @@ try {
     $archive = filter_input(INPUT_GET, 'archive', FILTER_SANITIZE_NUMBER_INT);
     $delete = filter_input(INPUT_GET, 'delete', FILTER_SANITIZE_NUMBER_INT);
     $unarchive = filter_input(INPUT_GET, 'unarchive', FILTER_SANITIZE_NUMBER_INT);
+    $getCountCommentarie = Commentarie::countCommentarie();
 } catch (\Throwable $th) {
     $error = $th->getMessage();
     include __DIR__ . '/../../../views/dashboard/templates/header_dashboard.php';

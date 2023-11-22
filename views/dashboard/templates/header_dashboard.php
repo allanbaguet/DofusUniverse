@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="DofusUniverse : un fan-site dédié au mmorpg Dofus, avec ses guides, ses donjons, et toutes les nouvelles actualités !">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="/public/assets/img/favicon_removebg.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/public/assets/css/style.css">
@@ -15,7 +16,7 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="/accueil">
-                <img src="/public/assets/img/panoplies/aventurier/chapeau.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <img src="/public/assets/img/logo_desktop_removebg.png" alt="Logo" id="logo-desktop" class="d-inline-block align-text-top">
             </a>
             <div class="offcanvas offcanvas-end text-bg-dark w-75" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
@@ -53,14 +54,15 @@
                                 <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/accueil">Retour au site</a>
                             </li>
                             <li class="nav-item d-flex justify-content-center align-items-center">
-                            <?php if (!empty($_SESSION)) : ?>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/profil">
-                                        <img class="img-profil-header rounded" src="/public/uploads/users/<?= $getInfoUser->picture ?>" alt="">
-                                    </a>
-                                    <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/profil"><?= $_SESSION['username'] ?></a>
-                                </div>
-                            <?php endif; ?>                            </li>
+                                <?php if (!empty($_SESSION)) : ?>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/profil">
+                                            <img class="img-profil-header rounded" src="/public/uploads/users/<?= $getInfoUser->picture ?>" alt="">
+                                        </a>
+                                        <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/profil"><?= $_SESSION['username'] ?></a>
+                                    </div>
+                                <?php endif; ?>
+                            </li>
                             <li class="nav-item p-2 px-2 d-flex justify-content-center align-items-center">
                                 <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/deconnexion_controller.php">Déconnexion</a>
                             </li>

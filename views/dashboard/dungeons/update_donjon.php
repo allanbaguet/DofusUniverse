@@ -36,10 +36,10 @@
                     <label for="picture" class="col-sm-4 col-form-label fw-semibold fs-5">Image</label>
                     <div class="col-sm-8">
                         <div class="mb-5">
-                            <img class="img-fluid" src="/public/uploads/dungeons/<?= $dungeonObj->picture ?>" alt="image donjon">
+                            <img class="img-fluid" src="/public/uploads/dungeons/<?= $dungeonObj->picture_dungeons ?>" alt="image donjon">
                         </div>
                         <input type="file" class="form-control picture" name="picture" id="picture">
-                        <p class="text-white fst-italic">Format jpg/jpeg autorisé</p>
+                        <p class="text-white fst-italic">Format autorisé : JPG/JPEG</p>
                         <div id="pictureHelp" class="form-text error d-none text-danger">Le champ n'est pas valide</div>
                         <p class="error"> <?= $errors['picture'] ?? '' ?> </p>
                     </div>

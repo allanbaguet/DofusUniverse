@@ -21,7 +21,12 @@ try {
         // Récupération et validation de la textarea 
         $text = filter_input(INPUT_POST, 'text', FILTER_SANITIZE_SPECIAL_CHARS);
         if (!empty($text)) {
-            if (strlen($text) > 255) {
+            //trim pour supprimer les espaces blancs au début et à la fin
+            $trimmedText = trim($text);
+            //ici on utilise la variable contenant trim pour éviter à l'utilisateur d'envoyé des espaces blancs
+            if (empty($trimmedText)) {
+                $errors['text'] = 'Le champ de commentaire ne peut pas contenir que des espaces blancs';
+            } elseif (strlen($trimmedText) > 255) {
                 $errors['text'] = 'Le nombre de caractères a été dépassé';
             }
         } else {

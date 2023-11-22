@@ -195,8 +195,8 @@ class Guide
         $pdo = Database::connect();
         $sql = "SELECT * FROM `guides`
         INNER JOIN `users` ON `guides`.`id_users` = `users`.`id_users` WHERE `deleted_at` IS NULL;";
-        //requête SQL permettant de joindre la table vehicles et types, et de cibler leur colonne en commun
-        //qui est id_types
+        //requête SQL permettant de joindre la table guide et users, et de cibler leur colonne en commun
+        //qui est id_users
         $sth = $pdo->query($sql);
         // $sth->bindValue(':order', $order);
         // $sth->execute();
@@ -228,15 +228,15 @@ class Guide
     public function insert(): bool
     {
         $pdo = Database::connect();
-        $sql = 'INSERT INTO `guides` (`main_title`, `main_text`, `picture`, `description`,`id_users`)
-        VALUES (:main_title, :main_text, :picture, :description, :id_users);';
+        $sql = 'INSERT INTO `guides` (`main_title`, `main_text`, `picture_guides`, `description`,`id_users`)
+        VALUES (:main_title, :main_text, :picture_guides, :description, :id_users);';
         //:type -> marqueur nominatif (à utilisé quand une valeur vient de l'extérieur)
         $sth = $pdo->prepare($sql);
         //prepare -> éxecute la requête et protège d'injection SQL
         //prepare / bindValue -> méthode appartenant à un PDOStatement
         $sth->bindValue(':main_title', $this->getMain_title());
         $sth->bindValue(':main_text', $this->getMain_text());
-        $sth->bindValue(':picture', $this->getPicture());
+        $sth->bindValue(':picture_guides', $this->getPicture());
         $sth->bindValue(':description', $this->getDescription());
         $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
         //bindValue -> affecter une valeur à un marqueur nominatif
@@ -253,7 +253,7 @@ class Guide
         $pdo = Database::connect();
         $sql = 'UPDATE `guides` SET `main_title` = :main_title,
         `main_text` = :main_text,
-        `picture` = :picture,
+        `picture_guides` = :picture_guides,
         `description` = :description,
         `id_users` = :id_users 
         WHERE `id_guides` = :id_guides';
@@ -262,7 +262,7 @@ class Guide
         //prepare / bindValue -> méthode appartenant à un PDOStatement
         $sth->bindValue(':main_title', $this->getMain_title());
         $sth->bindValue(':main_text', $this->getMain_text());
-        $sth->bindValue(':picture', $this->getPicture());
+        $sth->bindValue(':picture_guides', $this->getPicture());
         $sth->bindValue(':description', $this->getDescription());
         $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
         $sth->bindValue(':id_guides', $this->getId_guides(), PDO::PARAM_INT);

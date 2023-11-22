@@ -10,6 +10,7 @@ try {
         header('location: /accueil');
         die;
     }
+    $title = "DofusUniverse - Modification utilisateur";
     $errors = [];
     //intval -> permet de nettoyer un entier
     $id_users = intval(filter_input(INPUT_GET, 'id_users', FILTER_SANITIZE_NUMBER_INT));

@@ -18,7 +18,7 @@
     <div class="row pt-3 justify-content-center align-items-center">
         <div class="col-lg-6 col-md-8 col-sm-10">
             <div class="mb-5">
-                <img class="img-fluid" src="/public/uploads/guides/<?= $getGuideList->picture ?>" alt="image donjon">
+                <img class="img-fluid" src="/public/uploads/guides/<?= $getGuideList->picture_guides ?>" alt="image donjon">
             </div>
             <p class="fs-5 pb-3">Si vous suivez ce guides, vous n'aurez aucun problème dans votre progression tout au long du jeu</p>
             <p class="fs-5 pb-5"><?= $getGuideList->description ?></p>
@@ -55,7 +55,7 @@
                     <p class="error"><?= $errors['text'] ?? '' ?></p>
                 </div>
                 <div class="d-flex justify-content-center mb-5">
-                    <button type="submit" class="btn" id="button-green">Envoyer le commentaire</button>
+                    <button type="submit" class="btn button-green">Envoyer le commentaire</button>
                 </div>
             </form>
         </div>

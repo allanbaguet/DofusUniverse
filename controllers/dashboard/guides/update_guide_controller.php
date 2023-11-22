@@ -13,6 +13,7 @@ try {
         die;
     }
     $errors = [];
+    $title = 'DofusUniverse - Modification guide';
     // $getUserList = User::get_all();
     $id_guides = intval(filter_input(INPUT_GET, 'id_guides', FILTER_SANITIZE_NUMBER_INT));
     //permet ici de filtrer le paramètre d'url id_guides
@@ -61,7 +62,7 @@ try {
         // //récupération et validation de l'image du guide
         //$picture contient un tableau de 6 valeurs
         try {
-            $guidePicture = $_FILES['picture'];
+            $guidePicture = $_FILES['picture_guides'];
             if (empty($guidePicture)) {
                 throw new Exception("Veuillez renseigner un fichier", 1);
             }
@@ -84,8 +85,13 @@ try {
             $to = __DIR__ . '/../../../public/uploads/guides/' . $fileName;
             //déplace un fichier d'un endroit à un autre
             move_uploaded_file($from, $to);
+
+            $imgSrcJpeg = imagecreatefromjpeg($to);
+            //attend en 3éme param quality, si pas défini, est a 70% de base
+            $imgQualityJpeg = imagejpeg($imgSrcJpeg, $to, $quality = -1);
+
         } catch (\Throwable $th) {
-            $errors['picture'] = $th->getMessage();
+            $errors['picture_guides'] = $th->getMessage();
         }
         if (empty($errors)) {
             $newGuide = new Guide();

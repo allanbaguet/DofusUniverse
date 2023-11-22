@@ -19,7 +19,7 @@
                     <h1>Erreur 404 - Page non trouvée</h1>
                     <p class="fs-5">Désolé, la page que vous recherchez n'existe pas.</p>
                     <a href="/accueil">
-                        <button type="button" class="btn" id="button-green">Retour vers le site</button>
+                        <button type="button" class="btn button-green">Retour vers le site</button>
                     </a>
                 </div>
             </div>

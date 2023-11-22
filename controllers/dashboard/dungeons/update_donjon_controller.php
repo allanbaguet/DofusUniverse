@@ -13,6 +13,7 @@ try {
         die;
     }
     $errors = [];
+    $title = 'DofusUniverse - Modification donjon';
     // $getUserList = User::get_all();
     $id_dungeons = intval(filter_input(INPUT_GET, 'id_dungeons', FILTER_SANITIZE_NUMBER_INT));
     //permet ici de filtrer le paramètre d'url id_dungeons
@@ -87,10 +88,22 @@ try {
             //déplace un fichier d'un endroit à un autre
             move_uploaded_file($from, $to);
 
-            $imgSrc = imagecreatefromjpeg($to);
+            // // condition prenant en compte l'extension d'image upload, si jpg ou png
+            // if ($extension === 'jpg' || $extension === 'jpeg') {
+            //     $imgSrc = imagecreatefromjpeg($to);
+            //     // on définit ici la qualitée de l'image, dernier param par défaut à 70% de qualité
+            //     $imgQuality = imagejpeg($imgSrc, $to, $quality = -1);
+            // } elseif ($extension === 'png') {
+            //     $imgSrc = imagecreatefrompng($to);
+            //     // on définit ici la qualitée de l'image, dernier param par défaut à 70% de qualité
+            //     $imgQuality = imagepng($imgSrc, $to, $quality = -1);
+            // } else {
+            //     throw new Exception("Format d'image non pris en charge", 5);
+            // }
 
+            $imgSrcJpeg = imagecreatefromjpeg($to);
             //attend en 3éme param quality, si pas défini, est a 70% de base
-            $imgQuality = imagejpeg($imgSrc, $to);
+            $imgQualityJpeg = imagejpeg($imgSrcJpeg, $to, $quality = -1);
 
         } catch (\Throwable $th) {
             $errors['picture'] = $th->getMessage();

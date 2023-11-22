@@ -54,7 +54,7 @@ try {
         // //récupération et validation de l'image de la voiture
         //$picture contient un tableau de 6 valeurs
         try {
-            $dungeonPicture = $_FILES['picture'];
+            $dungeonPicture = $_FILES['picture_dungeons'];
             if (empty($dungeonPicture)) {
                 throw new Exception("Veuillez renseigner un fichier", 1);
             }
@@ -80,7 +80,7 @@ try {
 
             $imgSrcJpeg = imagecreatefromjpeg($to);
             //attend en 3éme param quality, si pas défini, est a 70% de base
-            $imgQualityJpeg = imagejpeg($imgSrcJpeg, $to);
+            $imgQualityJpeg = imagejpeg($imgSrcJpeg, $to, $quality = -1);
 
         } catch (\Throwable $th) {
             $errors['picture'] = $th->getMessage();

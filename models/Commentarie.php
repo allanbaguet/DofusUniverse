@@ -252,8 +252,6 @@ class Commentarie
         //sth -> statements handle
         return $result;
     }
-    // INSERT INTO `commentaries` (`text`, `id_guides`, `id_users`)
-    //     VALUES ('test', '7', '8');
 
     //Méthode permettant la mise à jour les commentaires
     public function update(): bool
@@ -279,6 +277,7 @@ class Commentarie
         //rowCount renvoi le nombre de ligne envoyé -> renvoi booléen 1, 2, 3 ...
     }
 
+    //méthode permettant d'archivé les commentaires
     //public static ici car on ne manipule pas de donnée
     public static function archive(int $id_comments): bool
     {
@@ -298,6 +297,7 @@ class Commentarie
         return $nbRows > 0 ? true : false;
     }
 
+    //méthode permettant d'afficher les commentaires
     public static function get_archive(): array
     {
         $pdo = Database::connect();
@@ -333,7 +333,7 @@ class Commentarie
         return $nbRows > 0 ? true : false;
     }
 
-
+    //méthode permettant de supprimer le commentaire
     public static function delete(int $id_comments): bool
     {
         $pdo = Database::connect();
@@ -353,6 +353,7 @@ class Commentarie
 
 
     //public static ici car on ne manipule pas de donnée
+    //méthode permettant de mettre à jour les commentaires en attente
     public static function confirm(int $id_comments): bool
     {
         $pdo = Database::connect();
@@ -371,7 +372,7 @@ class Commentarie
         return $nbRows > 0 ? true : false;
     }
 
-
+    //méthode permettant d'afficher la liste de commentaire en attente
     public static function toConfirm(): array
     {
         $pdo = Database::connect();
@@ -387,5 +388,17 @@ class Commentarie
         //fetchAll récupére tout les enregistrements
         //sth -> statements handle
         return $commentarieConfirm;
+    }
+
+    //méthode permettant de compter le nombre de commentaires en attente
+    public static function countCommentarie(): int
+    {
+        $pdo = Database::connect();
+        $sql = "SELECT COUNT(*) FROM `commentaries`
+            WHERE `commentaries`.`confirmed_at` IS NULL;";
+        $sth = $pdo->query($sql);
+        //fetchColumn récupérer la première colonne
+        $commentarieCount = $sth->fetchColumn();
+        return $commentarieCount;
     }
 }

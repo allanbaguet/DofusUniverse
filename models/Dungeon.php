@@ -148,15 +148,15 @@ class Dungeon {
     public function insert(): bool
     {
         $pdo = Database::connect();
-        $sql = "INSERT INTO `dungeons` (`main_title`, `main_text`, `picture`, `description`, `id_users`)
-        VALUES (:main_title, :main_text, :picture, :description, :id_users);";
+        $sql = "INSERT INTO `dungeons` (`main_title`, `main_text`, `picture_dungeons`, `description`, `id_users`)
+        VALUES (:main_title, :main_text, :picture_dungeons, :description, :id_users);";
         //:type -> marqueur nominatif (à utilisé quand une valeur vient de l'extérieur)
         $sth = $pdo->prepare($sql);
         //prepare -> éxecute la requête et protège d'injection SQL
         //prepare / bindValue -> méthode appartenant à un PDOStatement
         $sth->bindValue(':main_title', $this->getMain_title());
         $sth->bindValue(':main_text', $this->getMain_text());
-        $sth->bindValue(':picture', $this->getPicture());
+        $sth->bindValue(':picture_dungeons', $this->getPicture());
         $sth->bindValue(':description', $this->getDescription());
         $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
         //bindValue -> affecter une valeur à un marqueur nominatif
@@ -173,7 +173,7 @@ class Dungeon {
         $pdo = Database::connect();
         $sql = "UPDATE `dungeons` SET `main_title` = :main_title,
         `main_text` = :main_text,
-        `picture` = :picture,
+        `picture_dungeons` = :picture_dungeons,
         `description` = :description,
         `id_users` = :id_users
         WHERE `id_dungeons` = :id_dungeons";
@@ -182,7 +182,7 @@ class Dungeon {
         //prepare / bindValue -> méthode appartenant à un PDOStatement
         $sth->bindValue(':main_title', $this->getMain_title());
         $sth->bindValue(':main_text', $this->getMain_text());
-        $sth->bindValue(':picture', $this->getPicture());
+        $sth->bindValue(':picture_dungeons', $this->getPicture());
         $sth->bindValue(':description', $this->getDescription());
         $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
         $sth->bindValue(':id_dungeons', $this->getId_dungeons(), PDO::PARAM_INT);
@@ -259,23 +259,5 @@ class Dungeon {
         // fetchAll récupère tous les enregistrements
         return $dungeonList;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

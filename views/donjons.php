@@ -42,7 +42,7 @@
             <div class="card h-100 bg-color-body-card">
                 <h5 class="card-title p-3 text-center fs-4 title-card-white"><?=$dungeonList->main_title?></h5>
                 <a href="/donjon?id_dungeons=<?=$dungeonList->id_dungeons?>">
-                    <img src="/public/assets/img/donjons/image-donjon.jpg" class="card-img-top img-fluid desktop-img" alt="donjons">
+                    <img src="/public/uploads/dungeons/<?=$dungeonList->picture_dungeons?>" class="card-img-top img-fluid desktop-img" alt="donjons">
                 </a>
                 <div class="card-body p-0">
                     <p class="card-text p-3">Trouver ici le guide complet pour le donjon :

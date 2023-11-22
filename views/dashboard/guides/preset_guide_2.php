@@ -36,7 +36,7 @@
                     <div class="d-flex justify-content-evenly py-4">
                         <div id="clonePreset" class="btn btn-lg btn-primary mb-3"> + </div>
 
-                        <button type="submit" class="btn" id="button-green">Création</button>
+                        <button type="submit" class="btn button-green">Création</button>
 
                         <button id="removeClone" type="button" class="btn btn-danger btn-lg mb-3"> - </button>
 

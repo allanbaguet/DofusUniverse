@@ -21,7 +21,13 @@ p {
     font-family: 'Roboto', sans-serif;
     color: #f0f0f0;
 }
-#button-green {
+.button-green {
+    background-color: #6AA84F;
+    font-family: 'Roboto', sans-serif;
+    color: #f0f0f0;
+    font-weight: 600;
+}
+.btn:hover {
     background-color: #6AA84F;
     font-family: 'Roboto', sans-serif;
     color: #f0f0f0;

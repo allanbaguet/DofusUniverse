@@ -13,6 +13,9 @@ RewriteRule ^accueil$ /controllers/accueil_controller.php [L]
 # Réécriture d'URL pour l'inscription
 RewriteRule ^inscription$ /controllers/inscription_controller.php [L]
 
+# Réécriture d'URL pour la confirmation de l'inscription
+RewriteRule ^confirmation$ /controllers/inscription_confirm_controller.php [L]
+
 # Réécriture d'URL pour la connexion
 RewriteRule ^connexion$ /controllers/connexion_controller.php [L]
 

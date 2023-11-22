@@ -18,11 +18,11 @@
     <div class="row pt-3 justify-content-center align-items-center">
         <div class="col-lg-6 col-md-8 col-sm-10">
             <div class="mb-5">
-                <img class="img-fluid" src="/public/uploads/dungeons/<?= $getDungeonList->picture ?>" alt="image donjon">
+                <img class="img-fluid" src="/public/uploads/dungeons/<?= $getDungeonList->picture_dungeons ?>" alt="image donjon">
             </div>
             <p class="fs-5 pb-3">Vous devez vous rendre à cette position afin de pouvoir rentrer dans ce donjon et avoir la clé requise</p>
             <p class="fs-5 pb-5"><?= $getDungeonList->description ?></p>
-            <p class="fs-5 pb-5 text-end">Donjon crée par <span id="title-card-white"><?= $_SESSION['username'] ?>,</span> dernière modification le <?= date('d-m-Y', strtotime($getDungeonList->modified_at)) ?></p>
+            <p class="fs-5 pb-4 pt-2 text-end border-top border-4">Donjon crée par <span id="title-card-white"><?= $_SESSION['username'] ?>,</span> dernière modification le <?= date('d-m-Y', strtotime($getDungeonList->modified_at)) ?></p>
         </div>
     </div>
 </div>
@@ -57,7 +57,7 @@
                     <p class="error"><?= $errors['text'] ?? '' ?></p>
                 </div>
                 <div class="d-flex justify-content-center mb-5">
-                    <button type="submit" class="btn" id="button-green">Envoyer le commentaire</button>
+                    <button type="submit" class="btn button-green">Envoyer le commentaire</button>
                 </div>
             </form>
             <!-- Affichage des commentaires existants -->
