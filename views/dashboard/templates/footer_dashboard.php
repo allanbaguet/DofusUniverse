@@ -8,8 +8,8 @@
                             class="fw-bold">Tous droits réservés</span></p>
                     <p>Copyright &copy; 2023 DofusUniverse.fr</p>
                     <p class="fw-bold">
-                        <a href="#" class="text-decoration-none text-decoration-underline text-white">C.G.U</a> - <a
-                            href="#" class="text-decoration-none text-decoration-underline text-white">Mentions
+                        <a href="/controllers/cgu_controller.php" class="text-decoration-none text-decoration-underline text-white">C.G.U</a> - <a
+                            href="/controllers/mentions_legales_controller.php" class="text-decoration-none text-decoration-underline text-white">Mentions
                             Légales</a>
                     </p>
                 </div>

@@ -22,7 +22,7 @@
             </div>
             <p class="fs-5 pb-3">Si vous suivez ce guides, vous n'aurez aucun problème dans votre progression tout au long du jeu</p>
             <p class="fs-5 pb-5"><?= $getGuideList->description ?></p>
-            <p class="fs-5 pb-5 text-end">Donjon crée par <span id="title-card-white"><?= $_SESSION['username'] ?></span>, dernière modification le <?= date('d-m-Y', strtotime($getGuideList->modified_at)) ?></p>
+            <p class="fs-5 pb-4 pt-2 text-end border-top border-4">Donjon crée par <span id="title-card-white"><?= $_SESSION['username'] ?></span>, dernière modification le <?= date('d-m-Y', strtotime($getGuideList->modified_at)) ?></p>
         </div>       
     </div>
 </div>

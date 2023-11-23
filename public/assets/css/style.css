@@ -296,3 +296,12 @@ footer {
     position: relative;
     min-height: 70vh;
 }
+
+.CGU {
+    font-family: 'Roboto', sans-serif;
+    color: #f0f0f0;
+    font-size: 20px;
+}
+li .CGU{
+    font-size: 15px ;
+}

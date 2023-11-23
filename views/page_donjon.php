@@ -21,6 +21,7 @@
                 <img class="img-fluid" src="/public/uploads/dungeons/<?= $getDungeonList->picture_dungeons ?>" alt="image donjon">
             </div>
             <p class="fs-5 pb-3">Vous devez vous rendre à cette position afin de pouvoir rentrer dans ce donjon et avoir la clé requise</p>
+            <p class="fs-5 pb-3">Le trousseau de clefs permet d'y entrer, mais vous pouvez aussi fabriquer la clef.</p>
             <p class="fs-5 pb-5"><?= $getDungeonList->description ?></p>
             <p class="fs-5 pb-4 pt-2 text-end border-top border-4">Donjon crée par <span id="title-card-white"><?= $_SESSION['username'] ?>,</span> dernière modification le <?= date('d-m-Y', strtotime($getDungeonList->modified_at)) ?></p>
         </div>

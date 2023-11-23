@@ -39,7 +39,7 @@
                             <th scope="col">ID</th>
                             <th scope="col">Pseudo</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Modification</th>
+                            <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
@@ -84,7 +84,7 @@
                             <th scope="col">ID</th>
                             <th scope="col">Pseudo</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Modification</th>
+                            <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">

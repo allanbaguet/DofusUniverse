@@ -52,7 +52,7 @@
                             <th scope="col">Contenu</th>
                             <th scope="col">Donjon</th>
                             <th scope="col">Guide</th>
-                            <th scope="col">Modification</th>
+                            <th scope="col">Archivage</th>
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
@@ -95,7 +95,7 @@
                         <th scope="col">Contenu</th>
                         <th scope="col">Donjon</th>
                         <th scope="col">Guide</th>
-                        <th scope="col">Modification</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">

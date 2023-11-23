@@ -391,6 +391,7 @@ class Commentarie
     }
 
     //méthode permettant de compter le nombre de commentaires en attente
+    //attend un entier -> int
     public static function countCommentarie(): int
     {
         $pdo = Database::connect();

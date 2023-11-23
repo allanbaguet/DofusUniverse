@@ -122,7 +122,7 @@
 
                         // Tronquer la description pour n'afficher que 2 phrases
                         $descriptionSentences = explode(".", $cleanedDescription);
-                        $truncatedDescription = implode(".", array_slice($descriptionSentences, 1, 1));
+                        $truncatedDescription = implode(".", array_slice($descriptionSentences, 1, 3));
 
                         $pubDate = date("d/m/Y", strtotime($item->pubDate));
             ?>
