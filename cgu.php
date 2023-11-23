@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <h1 class="text-uppercase text-center text-white p-5">Conditons générales d'utilisation</h1>
+                <h1 class="text-uppercase text-center text-white p-5">Conditions générales d'utilisation</h1>
             </div>
         </div>
     </div>

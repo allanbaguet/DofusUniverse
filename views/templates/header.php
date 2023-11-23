@@ -39,9 +39,9 @@
                         <li class="nav-item p-2 px-2 d-flex justify-content-center align-items-center">
                             <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/histoire-dofus">Histoire de Dofus</a>
                         </li>
-                        <li class="nav-item p-2 px-2 d-flex justify-content-center align-items-center">
+                        <!-- <li class="nav-item p-2 px-2 d-flex justify-content-center align-items-center">
                             <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/lexique">Lexique</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item p-2 px-2 d-flex justify-content-center align-items-center">
                             <a class="<?= (isset($_SESSION['id_users']) == [] ? 'd-none' : 'd-block') ?> nav-link text-white text-center text-uppercase txtNavbar" href="/encyclopédie">Encyclopédie</a>
                         </li>
