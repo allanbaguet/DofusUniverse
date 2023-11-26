@@ -48,7 +48,7 @@ try {
     
             if ($saved) {
                 // Commentaire inséré avec succès
-                FlashMessage::set("Commentaire bien envoyé, en attente de confirmation d'un administrateur", SUCCESS);
+                FlashMessage::set("Commentaire bien transmis, en attente de confirmation d'un administrateur", SUCCESS);
             } else {
                 // Une erreur s'est produite lors de l'insertion du commentaire
                 FlashMessage::set("Une erreur s'est produite lors de la création du commentaire", ERROR);

@@ -10,8 +10,10 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
+            <div class="col-2">
+                <img src="/public/assets/img/dofus_emeraude-removebg-preview.png" class="img-fluid">
+            </div>
+            <div class="col-8 p-3 rounded fs-5 my-4 bgColorText">
                 <p>Dofus est un jeu de rôle en ligne massivement multijoueur (MMORPG) français développé
                     et édité par Ankama puis par sa filiale Ankama Games à sa création en 2004.</p>
 
@@ -29,8 +31,8 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
+            <div class="col-2"></div>
+            <div class="col-8 p-3 rounded fs-5 my-4 bgColorText">
                 <p>Après son succès durable dans la fin des années 2000 et début 2010, Dofus perd de l'ampleur.</p>
 
                 <p>L'équipe choisit donc de fusionner certains de ses serveurs pour rassembler la communauté. </p>
@@ -39,13 +41,18 @@
                 <p>La population du jeu est depuis plutôt stable, sur une pente croissante avec de nombreux pics
                     correspondant aux gros événements ou sorties de mises à jour.</p>
             </div>
+            <div class="col-2">
+                <img src="/public/assets/img/dofus_turquoise-removebg-preview.png" class="img-fluid">
+            </div>
         </div>
     </div>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
+        <div class="col-2">
+                <img src="/public/assets/img/dofus_ivoire-removebg-preview.png" class="img-fluid">
+            </div>
+            <div class="col-8 p-3 rounded fs-5 my-4 bgColorText">
                 <p>En plus de sa version PC pour Mac, Linux et Windows, Ankama a sorti en 2016
                     une version Mobile intitulée « Dofus Touch ». </p>
 
@@ -61,8 +68,8 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
+            <div class="col-2"></div>
+            <div class="col-8 p-3 rounded fs-5 my-4 bgColorText">
                 <p>Le mercredi 30 septembre 2020, pour célébrer le premier anniversaire des serveurs Dofus Rétro,
                     de nouveaux serveurs spécifiquement « monocomptes » sont ouverts. </p>
 
@@ -89,13 +96,18 @@
 
                 <p>En 2019, Ankama atteint le douzième rang des entreprises Françaises les plus rentables.</p>
             </div>
+            <div class="col-2">
+                <img src="/public/assets/img/dofus_pourpre-removebg-preview.png" class="img-fluid">
+            </div>
         </div>
     </div>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10 p-3 rounded fs-5 my-5 bgColorText">
+        <div class="col-2">
+                <img src="/public/assets/img/dofus_ocre-removebg-preview.png" class="img-fluid">
+            </div>
+            <div class="col-8 p-3 rounded fs-5 my-5 bgColorText">
                 <p>Dofus prend place dans le Monde des Douze, un univers médiéval-fantastique. Les joueurs doivent
                     retrouver six Dofus primordiaux,
                     des œufs de dragons conférant une grande puissance à leur porteur, qui sont dispersés aux quatre
@@ -129,27 +141,27 @@
                 <p>Il existe aussi diverses fonctionnalités :</p>
 
                 <ul class="text-white">
-                    <li class="liDofus">
+                    <li class="CGU">
                         Créer de l'équipement, amélioration de ces objets ou récolte de ressources
                         par la réalisation de métiers ;
                     </li>
-                    <li class="liDofus">
+                    <li class="CGU">
                         Battre des champions de donjons avec des mécaniques de jeu variées et
                         des niveaux de difficultés différents ;
                     </li>
-                    <li class="liDofus">
+                    <li class="CGU">
                         Participer à des Tournois ou combats de « Kolizeum »"(Arène) contre d'autres
                         joueurs ;
                     </li>
-                    <li class="liDofus">
+                    <li class="CGU">
                         Rencontrer de nouvelles personnes via le côté social développé du jeu
                         (Guildes, Alliances, Groupes) ;
                     </li>
-                    <li class="liDofus">
+                    <li class="CGU">
                         Réaliser des quêtes afin de découvrir l'univers du jeu, mais aussi pour
                         acquérir des objets inédits ou des ressources spéciales ;
                     </li>
-                    <li class="liDofus">
+                    <li class="CGU">
                         Faire des chasses aux trésors pour l'obtention de ressources spécifiques.
                     </li>
                 </ul>

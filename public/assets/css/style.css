@@ -7,6 +7,9 @@ body {
     background-color: #2E2924;
     box-sizing: border-box;
 }
+.img_studio{
+    height: 30vh;
+}
 
 #logo-desktop {
     height: 10vh;

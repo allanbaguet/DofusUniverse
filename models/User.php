@@ -143,6 +143,25 @@ class User
         return $result;
     }
 
+    //méthode permettant de récuperer les infos du formulaire pour les modifiés ensuite
+    public static function getUsernameComment(int $id_users): object
+    {
+        $pdo = Database::connect();
+        $sql = 'SELECT * FROM `users` WHERE `id_users` = :id_users';
+        //  : -> marqueur nominatif (à utilisé quand une valeur vient de l'extérieur)
+        $sth = $pdo->prepare($sql);
+        //prepare -> éxecute la requête et protège d'injection SQL
+        $sth->bindValue(':id_users', $id_users, PDO::PARAM_INT);
+        //bindValue -> affecter une valeur à un marqueur nominatif 
+        //PDO::PARAM_INT -> permet de typer la valeur de retour (ici en INT) par défaut en string
+        $sth->execute();
+        //la méthode execute retourne un booléen
+        $result = $sth->fetch();
+        //fetch récupére le premier enregistrement
+        //sth -> statements handle
+        return $result;
+    }
+
     public function insert(): bool
     {
         $pdo = Database::connect();
@@ -169,8 +188,7 @@ class User
     {
         $pdo = Database::connect();
         $sql = 'UPDATE `users` SET `username` = :username,
-        `mail` = :mail,
-        `password` = :password,
+        `mail` = :mail,      
         `picture` = :picture
         WHERE `id_users` = :id_users';
         $sth = $pdo->prepare($sql);
@@ -178,7 +196,7 @@ class User
         //prepare / bindValue -> méthode appartenant à un PDOStatement
         $sth->bindValue(':username', $this->getUsername());
         $sth->bindValue(':mail', $this->getMail());
-        $sth->bindValue(':password', $this->getPassword());
+        // $sth->bindValue(':password', $this->getPassword());
         $sth->bindValue(':picture', $this->getPicture());
         $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
         //bindValue -> affecter une valeur à un marqueur nominatif, PDO::PARAM_STR par defaut
@@ -320,4 +338,6 @@ class User
             return null;
         }
     }
+
+
 }

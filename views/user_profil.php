@@ -47,7 +47,7 @@
                         <p class="card-text p-3"><?= $commentarieGuide->text ?></p>
                     <?php }
                     ?>
-                    <p class="card-text p-3">Trop bien ce guide</p>
+                    <p class="card-text p-3">Super guide !</p>
                 </div>
                 <div class="d-flex justify-content-center card-footer p-3 bg-color-top-bottom-card">
                     <a href="#" class="btn button-green">Voir</a>

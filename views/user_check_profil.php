@@ -5,7 +5,7 @@
                 <h5 class="card-title p-3 text-center fs-4 text-white" id="bg-color-top-bottom-card">Profil</h5>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center pb-4">
-                        <img src="/public/uploads/users/<?=$getInfoUser->picture?>" class="img-user img-fluid" alt="user_image">
+                        <img src="/public/uploads/users/<?=$getUserId->picture?>" class="img-user img-fluid" alt="user_image">
                         <!-- <div class="mb-3">
                             <label for="picture" class="form-label fs-5 my-3">
                                 <div class="btn" id="button-green">Modifier
@@ -38,7 +38,7 @@
             <div class="card h-100 bg-color-body-card">
                 <h5 class="card-title p-3 text-center fs-4 text-white bg-color-top-bottom-card">Derniers commentaires de l'utilisateur</h5>
                 <div class="card-body p-0">
-                    <h5 class="card-title p-3 title-card-white">Donjons</h5>
+                    <h5 class="card-title p-3 title-card-white">Guides</h5>
                     <p class="card-text p-3">Trop bien ce guide !</p>
                 </div>
                 <div class="d-flex justify-content-center card-footer p-3 bg-color-top-bottom-card">

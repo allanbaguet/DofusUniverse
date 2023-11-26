@@ -40,24 +40,30 @@ try {
                 $errors['mail'] = 'l\'email n\'est pas valide';
             }
         }
-        //récupération et validation du mot de passe
-        $password = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
-        $password2 = filter_input(INPUT_POST, 'password2', FILTER_DEFAULT);
-        $password = $_POST['password'];
-        $password2 = $_POST['password2'];
-        if (empty($password) || (empty($password2))) { // l'opérateur || correspond à 'OU'
-            $errors['password'] = 'Veuillez obligatoirement entrer un mot de passe et sa confirmation';
-        } else {
-            $isOk = filter_var($password, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/' . REGEX_PASSWORD . '/')));
-            if ($isOk == false) {
-                $errors['password'] = 'Mot de passe non valide (Veuillez respecter la structure ci-dessus)';
-            } elseif ($password !== $password2) {
-                $errors['password'] = 'Les mots de passe ne sont pas identiques';
-            } else {
-                //fonction permettant de hashé le mot de passe (il est encrypté, qui sera toujours un string de 60 caractères de long)
-                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-            }
-        }
+
+        //mis en commentaire car l'admin ne doit pas avoir accès aux mot de passe de l'utilisateurs
+
+
+        // //récupération et validation du mot de passe
+        // $password = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
+        // $password2 = filter_input(INPUT_POST, 'password2', FILTER_DEFAULT);
+        // $password = $_POST['password'];
+        // $password2 = $_POST['password2'];
+        // if (empty($password) || (empty($password2))) { // l'opérateur || correspond à 'OU'
+        //     $errors['password'] = 'Veuillez obligatoirement entrer un mot de passe et sa confirmation';
+        // } else {
+        //     $isOk = filter_var($password, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/' . REGEX_PASSWORD . '/')));
+        //     if ($isOk == false) {
+        //         $errors['password'] = 'Mot de passe non valide (Veuillez respecter la structure ci-dessus)';
+        //     } elseif ($password !== $password2) {
+        //         $errors['password'] = 'Les mots de passe ne sont pas identiques';
+        //     } else {
+        //         //fonction permettant de hashé le mot de passe (il est encrypté, qui sera toujours un string de 60 caractères de long)
+        //         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        //     }
+        // }
+
+
         // //récupération et validation de l'image de l'utilisateur
         try {
             //condition si une image est déjà enregistrée à un véhicule et le modifié ensuite
@@ -95,7 +101,7 @@ try {
             //on hydrate l'objet de toute les propriété
             $newUser->setUsername($username);
             $newUser->setMail($mail);
-            $newUser->setPassword($hashedPassword);
+            // $newUser->setPassword($hashedPassword);
             $newUser->setPicture($fileName);
             $newUser->setId_users($id_users);
             //on hydrate l'objet de toute les propriété

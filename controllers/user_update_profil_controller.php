@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../models/User.php';
 require_once __DIR__ . '/../config/regex.php';
@@ -9,7 +9,7 @@ try {
     $errors = [];
     //intval -> permet de nettoyer un entier
     $id_users = intval(filter_input(INPUT_GET, 'id_users', FILTER_SANITIZE_NUMBER_INT));
-        //permet ici de filtrer le paramètre d'url id_users
+    //permet ici de filtrer le paramètre d'url id_users
     $userObj = User::get($id_users);
     //pour appelé la méthode static -> appel de la classe avec :: nom de la fonction
     //variable qui appel la classe et sa méthode -> récupére l'id de l'utilisateur
@@ -40,18 +40,21 @@ try {
         $password2 = filter_input(INPUT_POST, 'password2', FILTER_DEFAULT);
         $password = $_POST['password'];
         $password2 = $_POST['password2'];
-        if (empty($password) || (empty($password2))) { // l'opérateur || correspond à 'OU'
-            $errors['password'] = 'Veuillez obligatoirement entrer un mot de passe et sa confirmation';
-        } else {
+        // Vérifier s'il y a un nouveau mot de passe fourni
+        if (!empty($password) || !empty($password2)) {
+            // Vérification du mot de passe
             $isOk = filter_var($password, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/' . REGEX_PASSWORD . '/')));
             if ($isOk == false) {
                 $errors['password'] = 'Mot de passe non valide (Veuillez respecter la structure ci-dessus)';
             } elseif ($password !== $password2) {
                 $errors['password'] = 'Les mots de passe ne sont pas identiques';
             } else {
-                //fonction permettant de hashé le mot de passe (il est encrypté, qui sera toujours un string de 60 caractères de long)
+                // Fonction permettant de hacher le mot de passe (il est encrypté, qui sera toujours un string de 60 caractères de long)
                 $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
             }
+        } else {
+            // Aucun nouveau mot de passe fourni, garder le mot de passe actuel
+            $hashedPassword = $userObj->password;
         }
         // //récupération et validation de l'image de l'utilisateur
         try {
@@ -96,12 +99,12 @@ try {
             //on hydrate l'objet de toute les propriété
             $saved = $newUser->update();
         }
-            //$saved -> réponse de la méthode en question -> ici retourne un booléen
-            if ($saved == true) {
-                //permet la redirection à la liste des catégories à la modification
-                header('location: /profil');
-                die;
-            }
+        //$saved -> réponse de la méthode en question -> ici retourne un booléen
+        if ($saved == true) {
+            //permet la redirection à la liste des catégories à la modification
+            header('location: /profil');
+            die;
+        }
     }
 } catch (\Throwable $th) {
     $error = $th->getMessage();

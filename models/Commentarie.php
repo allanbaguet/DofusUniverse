@@ -11,7 +11,7 @@ class Commentarie
     private DateTime $posted_at;
     private string $modified_at;
     private ?string $deleted_at;
-    private ?string $confirmed_at;
+    private ?string $confirmed_comm_at;
     //?string -> rend l'attribut null
     private int $id_guides;
     private int $id_dungeons;
@@ -67,14 +67,14 @@ class Commentarie
         $this->deleted_at = $deleted_at;
     }
 
-    public function getConfirmed_at(): string
+    public function getConfirmed_comm_at(): string
     {
-        return $this->confirmed_at;
+        return $this->confirmed_comm_at;
     }
 
-    public function setConfirmed_at(string $confirmed_at)
+    public function setConfirmed_comm_at(string $confirmed_comm_at)
     {
-        $this->confirmed_at = $confirmed_at;
+        $this->confirmed_comm_at = $confirmed_comm_at;
     }
 
     /**
@@ -140,7 +140,7 @@ class Commentarie
         $sql = "SELECT * FROM `commentaries`
         -- INNER JOIN `guides` ON `commentaries`.`id_guides` = `guides`.`id_guides`
         INNER JOIN `users` ON `commentaries`.`id_users` = `users`.`id_users`
-        WHERE `commentaries`.`deleted_at` IS NULL AND `commentaries`.`confirmed_at` IS NOT NULL;";
+        WHERE `commentaries`.`deleted_at` IS NULL AND `commentaries`.`confirmed_comm_at` IS NOT NULL;";
         //requête SQL permettant de joindre la table vehicles et types, et de cibler leur colonne en commun
         //qui est id_types
         $sth = $pdo->query($sql);
@@ -160,7 +160,7 @@ class Commentarie
             INNER JOIN `guides` ON `commentaries`.`id_guides` = `guides`.`id_guides`
             INNER JOIN `users` ON `commentaries`.`id_users` = `users`.`id_users`
             WHERE `commentaries`.`deleted_at` IS NULL 
-            AND `commentaries`.`confirmed_at` IS NOT NULL
+            AND `commentaries`.`confirmed_comm_at` IS NOT NULL
             AND `guides`.`id_guides` = :id_guides";
 
         $sth = $pdo->prepare($sql);
@@ -180,7 +180,7 @@ class Commentarie
             INNER JOIN `dungeons` ON `commentaries`.`id_dungeons` = `dungeons`.`id_dungeons`
             INNER JOIN `users` ON `commentaries`.`id_users` = `users`.`id_users`
             WHERE `commentaries`.`deleted_at` IS NULL 
-            AND `commentaries`.`confirmed_at` IS NOT NULL
+            AND `commentaries`.`confirmed_comm_at` IS NOT NULL
             AND `dungeons`.`id_dungeons` = :id_dungeons";
 
         $sth = $pdo->prepare($sql);
@@ -358,7 +358,7 @@ class Commentarie
     {
         $pdo = Database::connect();
         //SET `deleted_at` = NOW() permet de mettre à jour la colonne deleted_at à l'heure de l'envois à l'archive
-        $sql = "UPDATE `commentaries` SET `confirmed_at` = NOW() WHERE `id_comments` = :id_comments;";
+        $sql = "UPDATE `commentaries` SET `confirmed_comm_at` = NOW() WHERE `id_comments` = :id_comments;";
         //:id_types -> marqueur nominatif (à utilisé quand une valeur vient de l'extérieur)
         $sth = $pdo->prepare($sql);
         //prepare -> éxecute la requête et protège d'injection SQL
@@ -378,7 +378,7 @@ class Commentarie
         $pdo = Database::connect();
         $sql = "SELECT * FROM `commentaries`
         INNER JOIN `users` ON `commentaries`.`id_users` = `users`.`id_users`
-        WHERE `commentaries`.`confirmed_at` IS NULL;";
+        WHERE `commentaries`.`confirmed_comm_at` IS NULL;";
         //requête SQL permettant de joindre la table users et types, et de cibler leur colonne en commun
         //qui est id_types
         $sth = $pdo->query($sql);
@@ -396,7 +396,7 @@ class Commentarie
     {
         $pdo = Database::connect();
         $sql = "SELECT COUNT(*) FROM `commentaries`
-            WHERE `commentaries`.`confirmed_at` IS NULL;";
+            WHERE `commentaries`.`confirmed_comm_at` IS NULL;";
         $sth = $pdo->query($sql);
         //fetchColumn récupérer la première colonne
         $commentarieCount = $sth->fetchColumn();

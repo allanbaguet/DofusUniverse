@@ -10,8 +10,16 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
+        <div class="col position-relative">
+            <h2 class="text-uppercase text-center text-white p-5 ">“Avec Ankama, chaque histoire est unique, mais toutes sont connectées.”</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 p-3 rounded fs-5 my-4 bgColorText">
             <p>Ankama est une société française détenant le capital de plusieurs entreprises spécialisées dans le
                 domaine de la création numérique et artistique.</p>
 
@@ -24,11 +32,30 @@
         </div>
     </div>
 </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 d-flex">
+            <div class="card mx-auto">
+                <img src="/public/assets/img/oui_2.png" class="card-img-top img-fluid img_studio" alt="Krosmaga">
+                <div class="card-body bg-color-top-bottom-card">
+                    <p class="card-text">Krosmaga</p>
+                </div>
+            </div>
+            <div class="card mx-auto">
+                <img src="/public/assets/img/oui_3.png" class="card-img-top img-fluid img_studio" alt="Wakfu">
+                <div class="card-body bg-color-top-bottom-card">
+                    <p class="card-text">Wakfu</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
+        <div class="col-2"></div>
+        <div class="col-8 p-3 rounded fs-5 my-4 bgColorText">
             <p>Ankama est créée le 15 mai 2001 et s'engage dans le développement web, à l'initiative de trois amis
                 nordistes, Camille « Kam » Chafer (directeur technique), Anthony « Tot » Roux (directeur artistique)
                 et Emmanuel Darras (directeur commercial), issus de la même agence web. Passionnés de jeux vidéo,
@@ -56,8 +83,28 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
+        <div class="col-2"></div>
+        <div class="col-8 d-flex">
+            <div class="card mx-auto">
+                <img src="/public/assets/img/oui_4.png" class="card-img-top img-fluid img_studio" alt="Dofus">
+                <div class="card-body bg-color-top-bottom-card">
+                    <p class="card-text">Dofus</p>
+                </div>
+            </div>
+            <div class="card mx-auto">
+                <img src="/public/assets/img/oui_5.png" class="card-img-top img-fluid img_studio" alt="Tactile Wars">
+                <div class="card-body bg-color-top-bottom-card">
+                    <p class="card-text">Tactile Wars</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 p-3 rounded fs-5 my-4 bgColorText">
             <p>Dès 2005 est pensé une suite vidéoludique à Dofus, dans un système transmédia : Wakfu.
                 Sa sortie initiale est prévue pour 2007. Dans la foulée, une nouvelle branche se crée, Ankama
                 Animations, pour réaliser le dessin animé homonyme. Le 30 octobre 2008, la série télévisée
@@ -84,8 +131,28 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10 p-3 rounded fs-5 my-5 bgColorText">
+        <div class="col-2"></div>
+        <div class="col-8 d-flex">
+            <div class="card mx-auto">
+                <img src="/public/assets/img/oui_6.png" class="card-img-top img-fluid img_studio" alt="Krosmaster Arena">
+                <div class="card-body bg-color-top-bottom-card">
+                    <p class="card-text">Krosmaster Arena</p>
+                </div>
+            </div>
+            <div class="card mx-auto">
+                <img src="/public/assets/img/oui_7.png" class="card-img-top img-fluid img_studio" alt="Abraca">
+                <div class="card-body bg-color-top-bottom-card">
+                    <p class="card-text ">Abraca</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 p-3 rounded fs-5 my-5 bgColorText">
             <p>Ankama se développe à l'international dès les années 2000 avec deux filiales aux États-Unis et au
                 Japon
                 , et prend de l'expansion avec l'arrivée d'Olivier Comte comme directeur général et la création de

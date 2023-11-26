@@ -22,7 +22,7 @@
             </div>
             <p class="fs-5 pb-3">Si vous suivez ce guides, vous n'aurez aucun problème dans votre progression tout au long du jeu</p>
             <p class="fs-5 pb-5"><?= $getGuideList->description ?></p>
-            <p class="fs-5 pb-4 pt-2 text-end border-top border-4">Donjon crée par <span id="title-card-white"><?= $_SESSION['username'] ?></span>, dernière modification le <?= date('d-m-Y', strtotime($getGuideList->modified_at)) ?></p>
+            <p class="fs-5 pb-4 pt-2 text-end border-top border-4">Donjon crée par <span id="title-card-white">admin</span>, dernière modification le <?= date('d-m-Y', strtotime($getGuideList->modified_at)) ?></p>
         </div>       
     </div>
 </div>
@@ -39,8 +39,8 @@
                         <img src="/public/uploads/users/<?= $guideCommentarie->picture ?>" class="img-user-comm img-fluid ms-3" alt="user_image">
                     </div>
                     <div class="comment-text col-sm-10 col-md-8 ml-3 pt-2 pb-2 ">
-                        <a class="link-underline link-underline-opacity-0" href="/profil?id_users=<?= $guideCommentarie->id_users ?>">
-                            <p class="text-center fs-5" id="title-comm-green"><?= $guideCommentarie->username ?> - <span id="date-comm"><?= date('d-m-Y', strtotime($guideCommentarie->confirmed_at)) ?></span></p>
+                        <a class="link-underline link-underline-opacity-0" href="/profil-membre?id_users=<?= $guideCommentarie->id_users ?>">
+                            <p class="text-center fs-5" id="title-comm-green"><?= $guideCommentarie->username ?> - <span id="date-comm"><?= date('d-m-Y', strtotime($guideCommentarie->confirmed_comm_at)) ?></span></p>
                         </a>
                         <p><?= $guideCommentarie->text ?></p>
                     </div>

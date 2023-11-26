@@ -22,7 +22,7 @@
                         <p id="mailHelp" class="form-text error d-none text-danger">Cet email n'est pas valide</p>
                         <p class="error"> <?= $errors['mail'] ?? '' ?> </p>
                     </div>
-                    <div class="mb-3 password-input">
+                    <!-- <div class="mb-3 password-input">
                         <label for="password" class="form-label fs-5 my-3">Mot de passe *</label>
                         <div class="input-group">
                             <input type="password" class="form-control" name="password" id="password" value="" pattern="<?= REGEX_PASSWORD ?>" placeholder="Entrez votre mot de passe" required>
@@ -42,7 +42,7 @@
                         </div>
                         <p id="passwordCheck" class="form-text error d-none text-danger">Le mot de passe n'est pas identique</p>
                         <p class="error"><?= $errors['password'] ?? '' ?></p>
-                    </div>
+                    </div> -->
                     <div class="mb-3">
                         <label for="picture" class="form-label fs-5 my-3">Image de profil</label>
                         <input type="file" class="form-control" name="picture" id="picture" value="" placeholder="Votre image ici" accept="image/png, image/jpeg, image/jpg">
